@@ -5,6 +5,19 @@
   <title>สำหรับแบมนะะ 😸</title>
   <style>
     body {
+      <audio id="bgm" autoplay loop>
+  <source src="bgm.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // บางเบราว์เซอร์จะไม่ให้ autoplay ต้องให้ user คลิกก่อน
+  document.addEventListener('click', function () {
+    const bgm = document.getElementById('bgm');
+    bgm.volume = 0.7; // เสียงเบาๆ (0.0 - 1.0)
+    bgm.play().catch(() => {});
+  }, { once: true });
+</script>
+
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
@@ -125,3 +138,4 @@
 
 </body>
 </html>
+
